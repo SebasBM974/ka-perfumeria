@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="K&A Perfumería - Catálogo de perfumes para dama, caballero y unisex.">
+  <title>K&A Perfumería</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor encabezado-contenido">
+      <a href="#inicio" class="marca" aria-label="K&A Perfumería - Inicio">
+        <img src="logo.jpg" alt="Logo K&A Perfumería" class="logo">
+        <div class="marca-texto">
+          <span>K&A</span>
+          <small>PERFUMERÍA</small>
+        </div>
+      </a>
+
+      <nav class="navegacion" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#categorias">Categorías</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#para-ti">Para ti</a>
+
+        <div class="filtros-navegacion">
+          <button
+            type="button"
+            id="abrir-filtros"
+            class="boton-filtros"
+            aria-expanded="false"
+            aria-controls="panel-filtros"
+          >
+            Filtros
+          </button>
+
+          <div
+            id="panel-filtros"
+            class="panel-filtros"
+            aria-hidden="true"
+          >
+            <div class="filtros-titulo">
+              <span class="etiqueta">FILTRAR PRODUCTOS</span>
+              <h3>Encuentra tu perfume</h3>
+            </div>
+
+            <div class="filtros-grid">
+
+              <div class="filtro-grupo">
+                <label for="precio-minimo">
+                  Precio mínimo
+                </label>
+
+                <input
+                  type="number"
+                  id="precio-minimo"
+                  min="0"
+                  step="1000"
+                  placeholder="$ Mínimo"
+                >
+              </div>
+
+              <div class="filtro-grupo">
+                <label for="precio-maximo">
+                  Precio máximo
+                </label>
+
+                <input
+                  type="number"
+                  id="precio-maximo"
+                  min="0"
+                  step="1000"
+                  placeholder="$ Máximo"
+                >
+              </div>
+
+              <div class="filtro-grupo">
+                <label for="filtro-categoria">
+                  Para quién
+                </label>
+
+                <select id="filtro-categoria">
+                  <option value="">Todos</option>
+                  <option value="Dama">Dama</option>
+                  <option value="Caballero">Caballero</option>
+                  <option value="Unisex">Unisex</option>
+                </select>
+              </div>
+
+              <div class="filtro-grupo">
+                <label for="filtro-marca">
+                  Marca
+                </label>
+
+                <select id="filtro-marca">
+                  <option value="">
+                    Todas las marcas
+                  </option>
+                </select>
+              </div>
+
+              <div class="filtro-grupo filtro-nombre">
+                <label for="filtro-nombre">
+                  Nombre del perfume
+                </label>
+
+                <input
+                  type="text"
+                  id="filtro-nombre"
+                  placeholder="Ej. Yara, 1 Million..."
+                >
+              </div>
+
+            </div>
+
+            <div class="filtros-acciones">
+
+              <button
+                type="button"
+                id="aplicar-filtros"
+                class="boton boton-primario"
+              >
+                Aplicar filtros
+              </button>
+
+              <button
+                type="button"
+                id="limpiar-filtros"
+                class="boton boton-secundario"
+              >
+                Limpiar
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+        <a href="#carrito">Carrito</a>
+      </nav>
+    </div>
+  </header>
+
+  <button
+    id="carrito-flotante"
+    class="carrito-flotante"
+    type="button"
+    aria-label="Abrir carrito"
+  >
+    <span class="carrito-icono">🛒</span>
+    <span id="cantidad-flotante" class="contador">0</span>
+    <strong>$<span id="total-flotante">0</span></strong>
+  </button>
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <div class="contenedor hero-contenido">
+
+        <div class="hero-texto">
+          <span class="etiqueta">K&A PERFUMERÍA</span>
+
+          <h1>
+            Encuentra una fragancia que vaya contigo.
+          </h1>
+
+          <p>
+            Explora nuestro catálogo de perfumes
+            para dama, caballero y unisex.
+          </p>
+
+          <a
+            href="#categorias"
+            class="boton boton-primario"
+          >
+            Ver catálogo
+          </a>
+        </div>
+
+        <div class="hero-logo">
+          <img
+            src="logo.jpg"
+            alt="Logo de K&A Perfumería"
+          >
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="categorias" class="seccion">
+      <div class="contenedor">
+
+        <div class="encabezado-seccion">
+          <span class="etiqueta">ELIGE TU ESTILO</span>
+
+          <h2>Categorías</h2>
+
+          <p>
+            Selecciona una categoría para comenzar
+            a explorar.
+          </p>
+        </div>
+
+        <div class="categorias-grid">
+
+          <button
+            class="categoria-card"
+            type="button"
+            data-categoria="Dama"
+          >
+            <span>🌸</span>
+            <strong>Dama</strong>
+            <small>Perfumes femeninos</small>
+          </button>
+
+          <button
+            class="categoria-card"
+            type="button"
+            data-categoria="Caballero"
+          >
+            <span>🍷</span>
+            <strong>Caballero</strong>
+            <small>Perfumes masculinos</small>
+          </button>
+
+          <button
+            class="categoria-card"
+            type="button"
+            data-categoria="Unisex"
+          >
+            <span>✨</span>
+            <strong>Unisex</strong>
+            <small>Fragancias para todos</small>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section
+      id="marcas"
+      class="seccion seccion-suave"
+    >
+      <div class="contenedor">
+
+        <div class="encabezado-seccion">
+          <span class="etiqueta">
+            MARCAS DISPONIBLES
+          </span>
+
+          <h2>Elige una marca</h2>
+        </div>
+
+        <div
+          id="marcas-container"
+          class="marcas-grid"
+        >
+          <div class="mensaje-vacio">
+            Selecciona una categoría para ver
+            las marcas disponibles.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section
+      id="productos-seccion"
+      class="seccion"
+    >
+      <div class="contenedor">
+
+        <div
+          id="productos"
+          class="productos-grid"
+        >
+          <div class="mensaje-vacio">
+            Selecciona una marca para ver sus
+            fragancias disponibles.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section
+      id="detalle-perfume"
+      class="seccion detalle-oculto"
+      aria-live="polite"
+    >
+      <div class="contenedor">
+
+        <div id="detalle-contenido"></div>
+
+        <div class="recomendaciones-bloque">
+
+          <div class="encabezado-seccion">
+            <span class="etiqueta">
+              TAMBIÉN PODRÍA GUSTARTE
+            </span>
+
+            <h2>Productos similares</h2>
+          </div>
+
+          <div
+            id="recomendaciones-container"
+            class="productos-grid"
+          ></div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <section
+      id="para-ti"
+      class="seccion seccion-suave"
+    >
+      <div class="contenedor">
+
+        <div class="encabezado-seccion">
+
+          <span class="etiqueta">
+            RECOMENDACIONES
+          </span>
+
+          <h2>Para ti</h2>
+
+          <p>
+            Una selección de productos del catálogo
+            para descubrir nuevas fragancias.
+          </p>
+
+        </div>
+
+        <div
+          id="productos-recomendados"
+          class="productos-grid"
+        >
+          <div class="mensaje-vacio">
+            Selecciona una categoría para generar
+            recomendaciones.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section
+      id="carrito"
+      class="seccion carrito-seccion"
+    >
+      <div
+        class="contenedor carrito-contenedor"
+      >
+
+        <div class="encabezado-seccion">
+
+          <span class="etiqueta">
+            TU SELECCIÓN
+          </span>
+
+          <h2>Carrito</h2>
+
+          <p>
+            Revisa tus productos antes de
+            solicitar el pedido.
+          </p>
+
+        </div>
+
+        <div
+          id="lista-carrito"
+          class="lista-carrito"
+        >
+          <div class="mensaje-vacio">
+            Tu carrito está vacío.
+          </div>
+        </div>
+
+        <div class="resumen-carrito">
+          <span>Total</span>
+
+          <strong>
+            $<span id="total">0</span>
+          </strong>
+        </div>
+
+        <div class="contacto-pedido">
+
+          <p>
+            Cuando estés listo, envía tu pedido
+            por WhatsApp:
+          </p>
+
+          <div class="whatsapp-grid">
+
+            <button
+              class="boton boton-whatsapp"
+              type="button"
+              data-whatsapp="573136668870"
+            >
+              📱 3136668870
+            </button>
+
+            <button
+              class="boton boton-whatsapp"
+              type="button"
+              data-whatsapp="573232113883"
+            >
+              📱 3232113883
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="pie">
+
+    <div class="contenedor pie-contenido">
+
+      <img
+        src="logo.jpg"
+        alt="K&A Perfumería"
+        class="logo-pie"
+      >
+
+      <div>
+        <strong>K&A PERFUMERÍA</strong>
+
+        <p>
+          Perfumes para dama, caballero y unisex.
+        </p>
+      </div>
+
+      <div class="contacto-pie">
+
+        <span>WhatsApp</span>
+
+        <a
+          href="https://wa.me/573136668870"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          3136668870
+        </a>
+
+        <a
+          href="https://wa.me/573232113883"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          3232113883
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 K&A Perfumería.
+      Todos los derechos reservados.
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
